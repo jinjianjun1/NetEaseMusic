@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./song.css">
+    <title>歌曲播放</title>
+</head>
+<body>
+    <div class="page">  
+        <div class="disc-container">          
+            <img class="pointer" src="https://evenyao.github.io/NeteaseMusic/imgs/pointer.png" alt="">
+            <div class="disc">
+                <div class="icon-wraper">
+                    <svg class="icon icon-play">
+                            <use xlink:href="#icon-play"></use>                   
+                    </svg>
+                    <svg class="icon icon-pause">
+                        <use xlink:href="#icon-pause"></use>                   
+                    </svg> 
+                </div>
+                               
+                <img src="https://evenyao.github.io/NeteaseMusic/imgs/disc-ring.png" alt="" class="ring">
+                <img src="https://evenyao.github.io/NeteaseMusic/imgs/disc-ring-light.png" alt="" class="light">
+                <img src="https://audio-1257191344.cos.ap-chengdu.myqcloud.com/cover-7.png" alt="" class="cover">
+            </div>
+        </div>
+        <div class="song-decription">
+            <h1>沙漠骆驼</h1>
+            <div class="lyric">
+                <div class="lines"></div>
+            </div>
+        </div>
+        <div class="links">
+            <a href="#">打开</a>
+            <a href="#">下载</a>
+        </div>
+    </div> 
+    <script src="https://at.alicdn.com/t/font_869640_dmkssczuevl.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="./song.js"></script>
+</body>
+</html>

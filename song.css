@@ -1,0 +1,120 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+*::before,*::after{
+    box-sizing: border-box
+}
+
+
+@keyframes circle{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+.page{
+display: flex;
+flex-direction: column;
+height: 100vh;
+background:transparent  url(https://audio-1257191344.cos.ap-chengdu.myqcloud.com/bg-7.png) no-repeat center ;
+background-size: cover;
+}
+
+.disc-container{
+ position: relative;
+}
+.disc-container .icon{
+    width: 8vw;
+    fill: white;
+}
+.disc-container .disc{
+    position: relative;
+}
+.disc-container .icon-wraper{
+    position: absolute; 
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    background: rgba(0, 0,0,0.5);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}
+.disc-container .pointer{
+   width: 24vw;
+   position: absolute;
+   left: 46%;
+   z-index: 1;
+}
+
+
+.disc-container .disc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17vw;
+}
+
+
+.disc-container .disc .ring{
+    width: 72vw;
+}
+.disc-container .disc .light{
+   width: 72vw;
+   position: absolute;
+   animation: circle 20s infinite linear;
+
+}
+.disc-container .disc .cover{
+    width: 45vw;
+    position: absolute;
+    border-radius: 50%;
+    animation: circle 20s infinite linear;
+    animation-play-state: paused;
+}
+.disc-container.playing .light,
+.disc-container.playing .cover{
+    animation-play-state: running;
+}
+.disc-container .icon-pause{
+    display: none;
+}
+.disc-container.playing .icon-pause{
+  display: block;
+}
+.disc-container.playing .icon-play{
+    display: none;
+}
+
+
+.song-decription{
+    flex-grow: 1;
+    color:#AEABAC;
+    text-align: center;
+    line-height: 2;
+    margin-top: 20px;
+}
+.song-decription h1{
+    font-size: 18px;
+    color: white;
+}
+.song-decription p{
+    font-size: 14px;
+    line-height: 24px;
+}
+.song-decription p.active{
+    color: white;
+}
+.song-decription .lines{
+    transition: transform .3s;
+}
+.song-decription .lyric{
+    height: 72px;
+    overflow:hidden;
+}
