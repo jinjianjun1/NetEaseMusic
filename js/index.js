@@ -18,7 +18,23 @@ $(function(){
           </a>
       </li>
           `)
+          let $li2=(`<li>
+          <a href="./song.html?id=${i.id}">                
+              <h3>${i.name}</h3>
+              <p>
+                  <svg class="icon-sq">
+                      <use xlink:href="#icon-sq"></use>
+                  </svg>
+                  ${i.singer}-${i.album}</p>
+              
+              <svg class="icon">
+                  <use xlink:href="#icon-play-circle"></use>
+              </svg>
+          </a>
+      </li>
+          `)
           $('#latesterMusic').append($li)
+          $('#tab2Html').append($li2)
       })
       $('#latesterMusicLoading').remove()
     },function(){
@@ -39,9 +55,10 @@ $(function(){
         if($li.attr('data-downloaded')==='yes')return
 
        if(index ===1){
+           return
            $.get('./page2.json').then((response)=>{
                console.log(response)
-               $li.text(response.content)
+               $li.html(response.html)
                $li.attr('data-downloaded','yes')
             })
        }else if(index===2){
@@ -66,8 +83,12 @@ $(function(){
         timer=setTimeout(function(){
             search(value).then((result)=>{
                 timer =undefined
+                $('#output').empty()
                 if(result.length!==0){
-                $('#output').text(result.map((r)=>r.name).join(','))
+                    console.log(result)
+                    let $li=`<a href="./song.html?id=${result[0].id}"><li>${result[0].name} - ${result[0].singer}</li><a>`
+                    $('#output').append($li)
+                // $('#output').text(result.map((r)=>r.name).join(','))
                 }else{
                     $('#output').text('没有结果')
                 }
@@ -90,7 +111,7 @@ $(function(){
                 {   "id":"10","name":"I'll be there for you","singer":"The Rembrandts"}
             ]
             let result= database.filter(function(item){
-                 return  item.name.indexOf(keyword)>=0//||item.singer.indexOf(keyword)>=0
+                 return  item.name.indexOf(keyword)>=0||item.singer.indexOf(keyword)>=0
             })
             setTimeout(() => {
                 resolve(result)
