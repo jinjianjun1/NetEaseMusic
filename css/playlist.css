@@ -86,6 +86,9 @@ color: #dedcd6;
     display: flex;
     line-height: 1;
     align-items: center;
+    margin-left: -3vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 .tab2>ol{
     padding-left: calc(.5em + 2px)
