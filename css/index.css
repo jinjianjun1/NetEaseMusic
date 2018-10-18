@@ -22,6 +22,7 @@ section>h2:first-child{
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 3;
 }
 .topbar{
     background: #D43C33;
@@ -221,7 +222,7 @@ section.art .copyright{
 }
 .tab2 .imgCt img{
 width: 100%;
-height: 100%
+height: 100%;
 }
 .tab2 .imgCt h1{
     position: absolute;
